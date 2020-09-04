@@ -1,0 +1,12 @@
+<% @kittens.each do |kitten| %>
+    <%= 'Name: ' %><%= kitten.name %><br>
+    <%= 'Age: ' %><%= kitten.age %><br>
+    <%= 'Cuteness: ' %><%= kitten.cuteness %><br>
+    <%= 'Softness: ' %><%= kitten.softness %><br>
+    <%= form_with(url: kitten_path(kitten.id), method: 'get', local: true) do |view_form| %>
+        <%= view_form.submit 'View Kitten' %><br>
+    <% end %>
+    <%= form_with(url: kitten_path(kitten.id), method: 'delete', local: true) do |delete_form| %>
+        <%= delete_form.submit 'Delete Kitten' %><br><br>
+    <% end %>
+<% end %>

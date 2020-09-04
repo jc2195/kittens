@@ -1,0 +1,4 @@
+<%= render 'form' %>
+<%= form_with url: kitten_path(@kitten.id), method: 'delete', local: true do |delete_form| %>
+    <%= delete_form.submit 'Delete Kitten' %>
+<% end %>

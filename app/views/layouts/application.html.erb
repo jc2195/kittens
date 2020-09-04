@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <%= flash[:notice] %><br><br>
+    <% end %>
+    <%= link_to 'Create a Kitten', new_kitten_path %>
+    <%= link_to 'View all Kittens', kittens_path %><br><br>
     <%= yield %>
   </body>
 </html>
